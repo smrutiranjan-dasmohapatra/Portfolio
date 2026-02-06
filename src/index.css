@@ -1,0 +1,31 @@
+@import "tailwindcss";
+/* ============================= */
+/* GLOBAL HORIZONTAL OVERFLOW FIX */
+/* ============================= */
+
+/* 1. Prevent any accidental horizontal scroll globally */
+html, body {
+  overflow-x: hidden; /* hide any horizontal overflow */
+}
+
+/* 2. Optional: Ensure sections don’t overflow */
+section {
+  overflow-x: hidden;
+}
+
+/* 3. Optional: Clip absolutely positioned elements inside sections */
+section > .overflow-hidden-wrapper {
+  overflow-x: hidden;
+  position: relative; /* required to clip absolute children */
+}
+
+/* 4. Mobile-specific adjustments */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
+}
