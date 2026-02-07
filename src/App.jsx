@@ -7,6 +7,7 @@ import About from "./components/About";
 import Works from "./components/Works";
 import Contact from "./components/Contact";
 
+
 function App() {
   return (
     <ReactLenis root>
@@ -17,7 +18,8 @@ function App() {
         <Skills />
         <About />
         <Works />
-        <Contact/>
+        <Contact />
+        
       </div>
     </ReactLenis>
   );

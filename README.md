@@ -1,28 +1,33 @@
-#  Smrutiranjan Damohapatra — Frontend Foucused Full-Stack Developer Portfolio
+# Smrutiranjan Damohapatra — Frontend Foucused Full-Stack Developer Portfolio
 
     This is my personal portfolio website built to showcase my skills, projects, and experience as a frontend developer.
 
-##  Tech Stack
+## Tech Stack
+
     - React (Vite)
     - Tailwind CSS
     - GSAP (Animations)
-    - JavaScript 
+    - JavaScript
 
-##  Features
+## Features
+
     - Smooth GSAP animations
     - Modern and clean UI
     -Fully responsive design
     - Optimized performance with Vite
 
-##   Projects
+## Projects
+
     - Portfolio Website
     - Dashboard UI
     - Ticket Booking App
 
-##  Live Website
+## Live Website
+
     Coming soon (Vercel deployment in progress)
 
-##   Contact
+## Contact
+
     - GitHub: https://github.com/smrutiranjan-dasmohapatra
     - LinkedIn: https://www.linkedin.com/in/smrutiranjan-dasmohapatra-b64837368/?originalSubdomain=in
 
