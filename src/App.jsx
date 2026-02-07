@@ -5,7 +5,7 @@ import Expertise from "./components/Expertise";
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Works from "./components/Works";
-import Contact from "./components/contact_temp";
+import Contact from "./components/Contact";
 
 
 function App() {
