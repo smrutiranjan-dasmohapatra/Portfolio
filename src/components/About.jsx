@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
+import AnimatedHeaderSection from "../animated_components/ok";
 import AnimatedTextLines from "../animated_components/AnimatedTextLines";
 
 import smrutiImg from "../assets/smruti.png";
@@ -55,7 +55,10 @@ to real products while collaborating closely with designers and developers.`;
   }, []);
 
   return (
-    <section id="about" className="min-h-screen bg-black rounded-b-sm overflow-x-hidden">
+    <section
+      id="about"
+      className="min-h-screen bg-black rounded-b-sm overflow-x-hidden"
+    >
       {/* HEADER */}
       <AnimatedHeaderSection
         title="About"
@@ -63,10 +66,8 @@ to real products while collaborating closely with designers and developers.`;
         textColor="text-green-200"
         withScrollTrigger
         showLine={false}
-         topSpacing="pt-28"
-      minHeight="min-h-[30vh]"
-        
-        
+        topSpacing="pt-28"
+        minHeight="min-h-[30vh]"
       />
 
       {/* MAIN CONTENT */}
@@ -133,8 +134,8 @@ to real products while collaborating closely with designers and developers.`;
 
                 <p className="mt-2 text-sm text-green-100/70 leading-relaxed">
                   Building production-ready React and Flutter applications,
-                  collaborating closely with designers and backend engineers
-                  to deliver clean, scalable, and user-focused interfaces.
+                  collaborating closely with designers and backend engineers to
+                  deliver clean, scalable, and user-focused interfaces.
                 </p>
               </div>
             </div>

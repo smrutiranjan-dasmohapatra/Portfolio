@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skillsData } from "../data/SkilsData";
-import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
+import AnimatedHeaderSection from "../animated_components/ok";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +50,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.3"
+          "-=0.3",
         )
         .to(
           desc,
@@ -59,7 +59,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.25"
+          "-=0.25",
         )
         .to(
           items,
@@ -69,7 +69,7 @@ function Skills() {
             stagger: 0.08,
             duration: 0.3,
           },
-          "-=0.2"
+          "-=0.2",
         );
     });
 
@@ -85,8 +85,7 @@ function Skills() {
         withScrollTrigger
         showLine={false}
         topSpacing="pt-28"
-      minHeight="min-h-[30vh]"
-        
+        minHeight="min-h-[30vh]"
       />
 
       {/* SKILLS */}

@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
+import AnimatedHeaderSection from "../animated_components/ok";
 import { projects } from "../data/projectsData";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";
@@ -63,8 +63,8 @@ and scalable web & mobile solutions using modern technologies.`;
         textColor="text-black"
         withScrollTrigger
         showLine={false}
-         topSpacing="pt-28"
-      minHeight="min-h-[30vh]"
+        topSpacing="pt-28"
+        minHeight="min-h-[30vh]"
         text={text}
       />
 

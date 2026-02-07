@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedHeaderSection from "../animated_components/animatedHeaderSection";
+import AnimatedHeaderSection from "../animated_components/ok";
 import { social } from "../data";
 
 gsap.registerPlugin(ScrollTrigger);
