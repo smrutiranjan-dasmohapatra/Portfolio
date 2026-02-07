@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skillsData } from "../data/SkilsData";
-import AnimatedHeaderSection from "../animated_components/ok";
+import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
 
 gsap.registerPlugin(ScrollTrigger);
 

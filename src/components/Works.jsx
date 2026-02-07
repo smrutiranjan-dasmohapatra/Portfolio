@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedHeaderSection from "../animated_components/ok";
+import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
 import { projects } from "../data/projectsData";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";

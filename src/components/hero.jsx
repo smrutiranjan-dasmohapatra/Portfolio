@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import AnimatedHeaderSection from "../animated_components/ok";
+import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
 
 const barItems = [
   { id: "01", label: "CONCEPT" },

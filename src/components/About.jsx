@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedHeaderSection from "../animated_components/ok";
+import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
 import AnimatedTextLines from "../animated_components/AnimatedTextLines";
 
 import smrutiImg from "../assets/smruti.png";
