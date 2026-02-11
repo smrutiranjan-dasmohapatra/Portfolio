@@ -9,7 +9,7 @@ export const experience = [
   {
     id: 2,
     role: "B.Tech – Computer Science",
-    place: "Raajdhani Engineering College,Bhubneswar",
+    place: "REC,Bhubneswar",
     from: "2022",
     to: "2026",
   },

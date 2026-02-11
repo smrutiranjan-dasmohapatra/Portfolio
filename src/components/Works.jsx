@@ -63,8 +63,8 @@ and scalable web & mobile solutions using modern technologies.`;
         textColor="text-black"
         withScrollTrigger
         showLine={false}
-        topSpacing="pt-28"
-        minHeight="min-h-[30vh]"
+        topSpacing="pt-20"
+        minHeight="min-h-[10vh]"
         text={text}
       />
 
