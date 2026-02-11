@@ -8,7 +8,7 @@ import Works from "./components/Works";
 
 import { StrictMode } from "react";
 import Experience from "./components/Experience";
-import Contact from "./components/contact";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
         <Experience />
         <Works />
         <Contact />
+        
       </div>
     </ReactLenis>
   );
