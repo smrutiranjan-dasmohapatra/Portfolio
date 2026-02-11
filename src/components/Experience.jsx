@@ -60,11 +60,11 @@ function Experience() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-6">
               {/* LEFT */}
               <div className="max-w-xl">
-                <h2 className="exp-company text-lg sm:text-xl md:text-2xl font-semibold text-black leading-tight">
+                <h2 className="exp-company font  text-lg sm:text-xl md:text-2xl font-semibold text-black leading-tight">
                   {item.place}
                 </h2>
 
-                <p className="exp-role mt-1 text-sm sm:text-base md:text-lg text-black/70 leading-relaxed">
+                <p className="exp-role mt-1 text-xs sm:text-sm font-light text-black leading-relaxed">
                   {item.role}
                 </p>
               </div>
