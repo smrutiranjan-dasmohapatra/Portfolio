@@ -63,7 +63,7 @@ My work mainly involves building responsive UIs, integrating APIs, improving per
         withScrollTrigger
         showLine={false}
         topSpacing="pt-28"
-        minHeight="min-h-[30vh]"
+        minHeight="min-h-[15vh]"
       />
 
       {/* MAIN CONTENT */}

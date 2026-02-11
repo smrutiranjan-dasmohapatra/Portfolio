@@ -64,7 +64,7 @@ and scalable web & mobile solutions using modern technologies.`;
         withScrollTrigger
         showLine={false}
         topSpacing="pt-20"
-        minHeight="min-h-[10vh]"
+        minHeight="min-h-[15vh]"
         text={text}
       />
 
