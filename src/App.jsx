@@ -8,6 +8,7 @@ import Works from "./components/Works";
 import Contact from "./components/contact";
 import { StrictMode } from "react";
 import Experience from "./components/Experience";
+import Contact from "./components/contact";
 
 function App() {
   return (
