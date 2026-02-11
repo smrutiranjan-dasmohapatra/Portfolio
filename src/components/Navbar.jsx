@@ -141,7 +141,7 @@ function Navbar() {
       >
         {/* Links */}
         <div className=" flex flex-col text-2xl gap-y-2 md:text-3xl lg:text-4xl">
-          {["home", "about", "works", "skills", "contact"].map(
+          {["home","skills",'experience', "about", "works", "contact"].map(
             (section, index) => (
               <div
                 key={section}

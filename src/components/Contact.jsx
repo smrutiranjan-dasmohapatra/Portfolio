@@ -1,8 +1,8 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedHeaderSection from "../animated_components/AnimatedHeaderSection";
-import { social } from "../data";
+import { Icon } from "@iconify/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,10 +10,10 @@ const Contact = () => {
   const sectionRef = useRef(null);
   const colRefs = useRef([]);
   const heroRef = useRef(null);
+  const [message, setMessage] = useState("");
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero fade-in
       gsap.from(heroRef.current, {
         y: 32,
         opacity: 0,
@@ -25,7 +25,6 @@ const Contact = () => {
         },
       });
 
-      // Column fade-in stagger
       colRefs.current.forEach((col, i) => {
         if (!col) return;
         gsap.from(col, {
@@ -46,11 +45,20 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
+  const handleWhatsAppSend = () => {
+    if (!message.trim()) return;
+    const encodedMsg = encodeURIComponent(message);
+    window.open(
+      `https://wa.me/918249172250?text=${encodedMsg}`,
+      "_blank"
+    );
+  };
+
   return (
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-black py-28 overflow-x-hidden"
+      className="bg-black py-14 overflow-x-hidden"
     >
       {/* HEADER */}
       <AnimatedHeaderSection
@@ -58,86 +66,140 @@ const Contact = () => {
         textColor="text-green-200"
         showLine={false}
         withScrollTrigger
-        topSpacing="pt-28"
         minHeight="min-h-[30vh]"
       />
 
-      {/* HERO LINE */}
-      <div className="max-w-7xl mx-auto mt-10 px-10">
+      {/* HERO */}
+      <div className="max-w-7xl mx-auto mt-10 px-6 md:px-10">
         <h2
           ref={heroRef}
           className="
             max-w-4xl
-            text-2xl sm:text-3xl md:text-2xl lg:text-4xl
-            font-light
-            uppercase
+            text-2xl sm:text-3xl lg:text-4xl
+            font-light uppercase
             tracking-[0.35em]
             leading-relaxed
             text-green-200/80
           "
         >
-          Frontend-focused full-stack developer helping turn ideas into modern
-          web and mobile applications.
+          Frontend-focused full-stack developer helping turn ideas
+          into modern web and mobile applications.
         </h2>
       </div>
 
-      {/* CONTACT GRID */}
-      <div className="max-w-7xl mx-auto px-10 mt-16 grid grid-cols-1 md:grid-cols-3 gap-20">
-        {/* ADDRESS */}
+      {/* GRID */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 mt-24 grid grid-cols-1 md:grid-cols-4 gap-16 text-green-200">
+        
+        {/* BRAND */}
         <div ref={(el) => (colRefs.current[0] = el)}>
-          <p className="uppercase text-sm tracking-widest text-green-100/70 mb-6">
-            Address
-          </p>
-          <p className="text-lg leading-relaxed text-green-200 hover:text-white">
-            India, Odisha <br /> Balasore, Bhograi
+          <h3 className="text-3xl font-normal tracking-wide mb-6">
+            SMRUTI
+          </h3>
+          <p className="text-green-100/90 leading-relaxed">
+            Frontend-focused full-stack developer building clean,
+            modern, scalable web and mobile experiences.
           </p>
         </div>
 
-        {/* GET IN TOUCH */}
+        {/* LINKS */}
         <div ref={(el) => (colRefs.current[1] = el)}>
-          <p className="uppercase text-sm tracking-widest text-green-100/70 mb-6">
-            Get in Touch
+          <p className="uppercase tracking-widest text-sm text-green-100/60 mb-6">
+            My Links
           </p>
-          <a
-            href="mailto:ssmrutiranjandmp@gmail.com"
-            className="block text-lg text-green-200 hover:text-white transition-colors duration-200 cursor-pointer"
-          >
-            ssmrutiranjandmp@gmail.com
-          </a>
-          <a
-            href="https://wa.me/918249172250"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-lg text-green-200 hover:text-white transition-colors duration-200 mt-1"
-          >
-            +91 82491 72250 (WhatsApp)
-          </a>
+          <ul className="space-y-3">
+            <li>
+              <a href="mailto:ssmrutiranjandmp@gmail.com" className="hover:text-white">
+                Email
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hover:text-white">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/smrutiranjan-dasmohapatra" target="_blank" rel="noreferrer" className="hover:text-white">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* SOCIALS */}
+        {/* DOWNLOADS */}
         <div ref={(el) => (colRefs.current[2] = el)}>
-          <p className="uppercase text-sm tracking-widest text-green-100/70 mb-6">
-            Socials
+          <p className="uppercase tracking-widest text-sm text-green-100/60 mb-6">
+            Downloads
           </p>
-          <div className="space-y-2">
-            {social.map((item) => (
-              <a
-                key={item.id} // unique key
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-green-200 hover:text-white transition-colors duration-200"
-              >
-                {item.label}
+          <ul className="space-y-3">
+            <li>
+              <a href="/resume.pdf" download className="hover:text-white">
+                Resume (PDF)
               </a>
-            ))}
-          </div>
+            </li>
+            <li>
+              <a href="/portfolio.pdf" download className="hover:text-white">
+                Portfolio (PDF)
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* LET’S TALK */}
+        <div ref={(el) => (colRefs.current[3] = el)}>
+          <p className="uppercase tracking-widest text-sm text-green-100/60 mb-6">
+            Let’s Talk
+          </p>
+          <p className="text-green-100/90 mb-4">
+            Have feedback, a question, or an opportunity?
+            Send a quick message — I’ll reply personally.
+          </p>
+
+          <textarea
+            rows="3"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Type your message here..."
+            className="
+              w-full bg-white/10
+              px-4 py-3 text-sm
+              text-white outline-none
+              resize-none mb-3
+            "
+          />
+
+          <button
+            onClick={handleWhatsAppSend}
+            className="
+              w-full bg-green-300 text-black
+              px-6 py-3 text-sm font-medium
+              hover:bg-green-400 transition
+            "
+          >
+            Send to WhatsApp
+          </button>
         </div>
       </div>
 
       {/* FOOTER */}
-      <div className="text-sm text-white px-9 mt-20">
-        © 2026 Smrutiranjan Damohapatra.
+      <div
+        className="
+          max-w-7xl mx-auto px-6 md:px-10 mt-20
+          flex flex-col md:flex-row
+          justify-between items-center
+          text-sm text-green-100/80
+          gap-4
+        "
+      >
+        <p>© 2026 Smrutiranjan Damohapatra</p>
+        <p className="flex items-center gap-2 text-green-100/80 text-sm">
+  <Icon icon="mdi:map-marker-outline" className="text-green-200 text-lg" />
+  Based in Odisha , India
+</p>
       </div>
     </section>
   );

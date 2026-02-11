@@ -13,29 +13,20 @@ function Hero() {
   const barRef = useRef(null);
   const lastScroll = useRef(0);
 
-  const text = `Frontend-focused full-stack developer
-Building modern web & mobile apps with React, React Native, Flutter, Next.js, Tailwind, GSAP & Django.
+
+  const text = `Building modern web & mobile apps with React, React Native, Flutter, Next.js, Tailwind, GSAP & Django.
 Skilled in UI/UX design and Figma, with real-world internship experience.`;
 
   useEffect(() => {
     const onScroll = () => {
       const current = window.scrollY;
 
-      if (current > lastScroll.current) {
-        gsap.to(barRef.current, {
-          x: -barRef.current.offsetWidth,
-          duration: 0.4,
-          ease: "power3.out",
-          overwrite: true,
-        });
-      } else {
-        gsap.to(barRef.current, {
-          x: 0,
-          duration: 0.4,
-          ease: "power3.out",
-          overwrite: true,
-        });
-      }
+      gsap.to(barRef.current, {
+        x: current > lastScroll.current ? -barRef.current.offsetWidth : 0,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: true,
+      });
 
       lastScroll.current = current;
     };
@@ -55,7 +46,7 @@ Skilled in UI/UX design and Figma, with real-world internship experience.`;
         className="absolute left-0 top-0 h-full w-[36px] sm:w-[56px] lg:w-[80px]
                    bg-black z-20 flex items-center justify-center overflow-hidden"
       >
-        <div className="flex items-center rotate-90 whitespace-nowrap gap-12 text-xs tracking-[0.2em] text-green-200">
+        <div className="flex items-center rotate-90 whitespace-nowrap gap-12 font-medium text-xs tracking-[0.2em] text-green-200">
           {barItems.map((item) => (
             <span key={item.id} className="flex items-center gap-1">
               <span className="opacity-60">{item.id}</span>
@@ -68,6 +59,7 @@ Skilled in UI/UX design and Figma, with real-world internship experience.`;
       <AnimatedHeaderSection
         subTitle="Hi, I'm Smruti — Frontend-focused full-stack developer."
         title="SMRUTI"
+    
         text={text}
         textColor="text-black"
         topSpacing="pt-16 sm:pt-28 lg:pt-48"

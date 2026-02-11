@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 function AnimatedHeaderSection({
   subTitle,
   title,
+  heroLine,          // 👈 NEW (LCP-safe text)
   text,
   textColor = "text-black",
   titleSize = "text-2xl sm:text-3xl md:text-4xl xl:text-[4.5rem]",
@@ -24,52 +25,54 @@ function AnimatedHeaderSection({
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      });
-
-      if (subtitleRef.current) {
-        tl.to(subtitleRef.current, {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out",
+      requestAnimationFrame(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            once: true,
+          },
         });
-      }
 
-      if (titleRef.current) {
-        tl.to(
-          titleRef.current.querySelectorAll(".char"),
-          {
+        if (subtitleRef.current) {
+          tl.to(subtitleRef.current, {
             y: 0,
-            rotateX: 0,
-            duration: 0.9,
-            ease: "power4.out",
-            stagger: 0.045,
-          },
-          "-=0.15",
-        );
-      }
-
-      if (bottomTextRefs.current.length) {
-        tl.to(
-          bottomTextRefs.current,
-          {
-            x: 0,
             opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.18,
-          },
-          "-=0.3",
-        );
-      }
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+
+        if (titleRef.current) {
+          tl.to(
+            titleRef.current.querySelectorAll(".char"),
+            {
+              y: 0,
+              rotateX: 0,
+              duration: 0.9,
+              ease: "power4.out",
+              stagger: 0.045,
+            },
+            "-=0.1"
+          );
+        }
+
+        if (bottomTextRefs.current.length) {
+          tl.to(
+            bottomTextRefs.current,
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              stagger: 0.18,
+            },
+            "-=0.3"
+          );
+        }
+      });
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   return (
@@ -77,16 +80,18 @@ function AnimatedHeaderSection({
       {/* TOP */}
       <div className={`relative ${minHeight} ${topSpacing}`}>
         <div className={`px-10 sm:px-16 ${textColor}`}>
+          
           {subTitle && (
             <p
               ref={subtitleRef}
-              style={{ opacity: 0, transform: "translateY(16px)" }}
+              style={{ opacity: 0.001, transform: "translateY(16px)" }}
               className="text-xs uppercase tracking-[0.4em] font-light mb-6"
             >
               {subTitle}
             </p>
           )}
 
+          {/* TITLE */}
           <h1
             ref={titleRef}
             className={`font-light uppercase ${titleSize} leading-[1] flex flex-wrap`}
@@ -105,11 +110,18 @@ function AnimatedHeaderSection({
               </span>
             ))}
           </h1>
+
+          {/* 🔥 LCP TEXT (STATIC) */}
+          {heroLine && (
+            <p className="mt-6 max-w-xl text-sm sm:text-base uppercase tracking-[0.2em] leading-relaxed">
+              {heroLine}
+            </p>
+          )}
         </div>
       </div>
 
-      {/* BOTTOM TEXT */}
-      {text && (
+      {/* BOTTOM ANIMATED TEXT */}
+      {lines.length > 0 && (
         <div
           className={`px-10 sm:px-16 mt-6 ml-auto max-w-2xl text-right ${textColor}`}
         >

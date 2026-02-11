@@ -17,7 +17,6 @@ function Skills() {
       const desc = el.querySelector("p");
       const items = el.querySelectorAll(".skill-item");
 
-      // Initial state (soft + smooth)
       gsap.set([title, desc, items], {
         opacity: 0,
         y: 18,
@@ -50,7 +49,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.3",
+          "-=0.3"
         )
         .to(
           desc,
@@ -59,7 +58,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.25",
+          "-=0.25"
         )
         .to(
           items,
@@ -69,7 +68,7 @@ function Skills() {
             stagger: 0.08,
             duration: 0.3,
           },
-          "-=0.2",
+          "-=0.2"
         );
     });
 
@@ -94,16 +93,16 @@ function Skills() {
           <div
             key={index}
             ref={(el) => (skillsRef.current[index] = el)}
-            className="border-t border-green-200/25 pt-10"
+            className="border-t border-green-200/20 pt-10"
           >
             <div className="max-w-4xl flex flex-col gap-6">
               {/* TITLE */}
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-green-200">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-green-200 tracking-wide">
                 {skill.title}
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="text-green-100/70 text-lg sm:text-xl font-light leading-relaxed">
+              <p className="text-green-100/90 text-base sm:text-lg font-light leading-relaxed">
                 {skill.description}
               </p>
 
@@ -116,11 +115,12 @@ function Skills() {
                       skill-item
                       flex gap-4
                       text-green-200
-                      
+                      font-normal
                       transition-colors duration-200
+                      hover:text-green-200
                     "
                   >
-                    <span className="text-green-200/40">
+                    <span className="text-gray-300/60">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span>{item}</span>
