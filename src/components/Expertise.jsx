@@ -28,7 +28,7 @@ function Expertise() {
         .from(title3.current, { x: 32, opacity: 0, duration: 0.7 }, "-=0.4")
         .from(title4.current, { y: 20, opacity: 0, duration: 0.6 }, "-=0.35");
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
@@ -39,12 +39,14 @@ function Expertise() {
     >
       {/* SECTION TITLE */}
       <div ref={title1} className="mb-6">
-        <p className="
+        <p
+          className="
           text-xs sm:text-sm md:text-base
           uppercase font-medium
           tracking-[0.25em] sm:tracking-[0.4em]
           text-neutral-900
-        ">
+        "
+        >
           Work Overview
         </p>
       </div>
@@ -85,13 +87,15 @@ function Expertise() {
 
       {/* DESCRIPTION */}
       <div ref={title4} className="max-w-xl sm:max-w-2xl mx-auto px-2">
-        <p className="
+        <p
+          className="
           text-sm sm:text-base md:text-lg
           font-light leading-relaxed sm:leading-loose
           text-neutral-700
-        ">
-          Hands-on experience through real-world projects
-          and an ongoing startup internship.
+        "
+        >
+          Hands-on experience through real-world projects and an ongoing startup
+          internship.
         </p>
       </div>
     </section>

@@ -9,11 +9,8 @@ import Contact from "./components/contact";
 import { StrictMode } from "react";
 import Experience from "./components/Experience";
 
-
-
 function App() {
   return (
-    
     <ReactLenis root>
       <div className="relative w-screen min-h-screen bg-green-200 overflow-x-hidden">
         <Navbar />

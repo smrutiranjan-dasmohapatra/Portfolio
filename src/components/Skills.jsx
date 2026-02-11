@@ -49,7 +49,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.3"
+          "-=0.3",
         )
         .to(
           desc,
@@ -58,7 +58,7 @@ function Skills() {
             y: 0,
             duration: 0.35,
           },
-          "-=0.25"
+          "-=0.25",
         )
         .to(
           items,
@@ -68,7 +68,7 @@ function Skills() {
             stagger: 0.08,
             duration: 0.3,
           },
-          "-=0.2"
+          "-=0.2",
         );
     });
 

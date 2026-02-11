@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 function AnimatedHeaderSection({
   subTitle,
   title,
-  heroLine,          // 👈 NEW (LCP-safe text)
+  heroLine, // 👈 NEW (LCP-safe text)
   text,
   textColor = "text-black",
   titleSize = "text-2xl sm:text-3xl md:text-4xl xl:text-[4.5rem]",
@@ -53,7 +53,7 @@ function AnimatedHeaderSection({
               ease: "power4.out",
               stagger: 0.045,
             },
-            "-=0.1"
+            "-=0.1",
           );
         }
 
@@ -67,12 +67,12 @@ function AnimatedHeaderSection({
               ease: "power3.out",
               stagger: 0.18,
             },
-            "-=0.3"
+            "-=0.3",
           );
         }
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
@@ -80,7 +80,6 @@ function AnimatedHeaderSection({
       {/* TOP */}
       <div className={`relative ${minHeight} ${topSpacing}`}>
         <div className={`px-10 sm:px-16 ${textColor}`}>
-          
           {subTitle && (
             <p
               ref={subtitleRef}

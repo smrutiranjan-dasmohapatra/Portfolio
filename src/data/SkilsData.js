@@ -31,10 +31,6 @@ export const skillsData = [
     title: "Tools & Deployment",
     description:
       "Version control, collaboration, and deployment tools used to manage and ship projects.",
-    items: [
-      "Git & GitHub",
-      "Vercel",
-      "Netlify",
-    ],
+    items: ["Git & GitHub", "Vercel", "Netlify"],
   },
 ];

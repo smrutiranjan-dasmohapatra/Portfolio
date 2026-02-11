@@ -1,9 +1,4 @@
-import React, {
-  useRef,
-  useState,
-  useLayoutEffect,
-  useEffect,
-} from "react";
+import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
 import { social } from "../data";
 import gsap from "gsap";
 import { scroller } from "react-scroll";
@@ -33,10 +28,11 @@ function Navbar() {
     });
 
     // Menu animation
-    tl.current = gsap.timeline({
-      paused: true,
-      defaults: { ease: "power3.out" },
-    })
+    tl.current = gsap
+      .timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      })
       .to(navRef.current, {
         xPercent: 0,
         autoAlpha: 1,
@@ -50,16 +46,13 @@ function Navbar() {
           duration: 0.3,
           stagger: 0.06,
         },
-        "-=0.25"
+        "-=0.25",
       )
-      .to(
-        contactRef.current,
-        { autoAlpha: 1, x: 0, duration: 0.3 },
-        "-=0.2"
-      );
+      .to(contactRef.current, { autoAlpha: 1, x: 0, duration: 0.3 }, "-=0.2");
 
     // Hamburger animation
-    iconTl.current = gsap.timeline({ paused: true })
+    iconTl.current = gsap
+      .timeline({ paused: true })
       .to(topLineRef.current, {
         rotate: 45,
         y: 3,
@@ -74,7 +67,7 @@ function Navbar() {
           duration: 0.2,
           ease: "power2.out",
         },
-        "<"
+        "<",
       );
 
     return () => {
@@ -141,12 +134,9 @@ function Navbar() {
       >
         {/* Links */}
         <div className=" flex flex-col text-2xl gap-y-2 md:text-3xl lg:text-4xl">
-          {["home","skills",'experience', "about", "works", "contact"].map(
+          {["home", "skills", "experience", "about", "works", "contact"].map(
             (section, index) => (
-              <div
-                key={section}
-                ref={(el) => (linksRef.current[index] = el)}
-              >
+              <div key={section} ref={(el) => (linksRef.current[index] = el)}>
                 <div
                   onClick={() => handleScrollTo(section)}
                   className="cursor-pointer transition-all duration-200 hover:text-white"
@@ -154,34 +144,32 @@ function Navbar() {
                   {section}
                 </div>
               </div>
-            )
+            ),
           )}
         </div>
 
         {/* Contact + Social */}
-       {/* Contact + Social */}
-<div
-  ref={contactRef}
-  className="
+        {/* Contact + Social */}
+        <div
+          ref={contactRef}
+          className="
     flex flex-wrap justify-between gap-4
 
   "
->
-
+        >
           <div className="font-light">
             <p className="tracking-wider text-green-100/70 ">E-mail</p>
             <p
-  className="
+              className="
      text-green-200
     hover:text-white
     lowercase
     transition-colors duration-200
     cursor-pointer
   "
->
-  dmpsmrutiranjan@gmail.com
-</p>
-
+            >
+              dmpsmrutiranjan@gmail.com
+            </p>
           </div>
 
           <div className="font-light">

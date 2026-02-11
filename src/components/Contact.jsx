@@ -48,10 +48,7 @@ const Contact = () => {
   const handleWhatsAppSend = () => {
     if (!message.trim()) return;
     const encodedMsg = encodeURIComponent(message);
-    window.open(
-      `https://wa.me/918249172250?text=${encodedMsg}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/918249172250?text=${encodedMsg}`, "_blank");
   };
 
   return (
@@ -82,22 +79,19 @@ const Contact = () => {
             text-green-200/80
           "
         >
-          Frontend-focused full-stack developer helping turn ideas
-          into modern web and mobile applications.
+          Frontend-focused full-stack developer helping turn ideas into modern
+          web and mobile applications.
         </h2>
       </div>
 
       {/* GRID */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 mt-24 grid grid-cols-1 md:grid-cols-4 gap-16 text-green-200">
-        
         {/* BRAND */}
         <div ref={(el) => (colRefs.current[0] = el)}>
-          <h3 className="text-3xl font-normal tracking-wide mb-6">
-            SMRUTI
-          </h3>
+          <h3 className="text-3xl font-normal tracking-wide mb-6">SMRUTI</h3>
           <p className="text-green-100/90 leading-relaxed">
-            Frontend-focused full-stack developer building clean,
-            modern, scalable web and mobile experiences.
+            Frontend-focused full-stack developer building clean, modern,
+            scalable web and mobile experiences.
           </p>
         </div>
 
@@ -108,22 +102,40 @@ const Contact = () => {
           </p>
           <ul className="space-y-3">
             <li>
-              <a href="mailto:ssmrutiranjandmp@gmail.com" className="hover:text-white">
+              <a
+                href="mailto:ssmrutiranjandmp@gmail.com"
+                className="hover:text-white"
+              >
                 Email
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white"
+              >
                 Instagram
               </a>
             </li>
             <li>
-              <a href="https://github.com/smrutiranjan-dasmohapatra" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a
+                href="https://github.com/smrutiranjan-dasmohapatra"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white"
+              >
                 GitHub
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white"
+              >
                 LinkedIn
               </a>
             </li>
@@ -155,8 +167,8 @@ const Contact = () => {
             Let’s Talk
           </p>
           <p className="text-green-100/90 mb-4">
-            Have feedback, a question, or an opportunity?
-            Send a quick message — I’ll reply personally.
+            Have feedback, a question, or an opportunity? Send a quick message —
+            I’ll reply personally.
           </p>
 
           <textarea
@@ -197,9 +209,12 @@ const Contact = () => {
       >
         <p>© 2026 Smrutiranjan Damohapatra</p>
         <p className="flex items-center gap-2 text-green-100/80 text-sm">
-  <Icon icon="mdi:map-marker-outline" className="text-green-200 text-lg" />
-  Based in Odisha , India
-</p>
+          <Icon
+            icon="mdi:map-marker-outline"
+            className="text-green-200 text-lg"
+          />
+          Based in Odisha , India
+        </p>
       </div>
     </section>
   );

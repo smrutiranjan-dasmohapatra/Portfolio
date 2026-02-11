@@ -54,7 +54,7 @@ and building strong technical foundations.`;
             y: 0,
             duration: 0.35,
           },
-          "-=0.3"
+          "-=0.3",
         )
         .to(
           role,
@@ -63,7 +63,7 @@ and building strong technical foundations.`;
             y: 0,
             duration: 0.3,
           },
-          "-=0.25"
+          "-=0.25",
         )
         .to(
           date,
@@ -72,7 +72,7 @@ and building strong technical foundations.`;
             y: 0,
             duration: 0.3,
           },
-          "-=0.3"
+          "-=0.3",
         );
     });
 
@@ -84,7 +84,6 @@ and building strong technical foundations.`;
       {/* HEADER */}
       <AnimatedHeaderSection
         title="EXPERIENCE"
-      
         textColor="text-black"
         withScrollTrigger
         showLine={false}

@@ -5,7 +5,6 @@ export const experience = [
     place: "Prustaz ",
     from: "2025",
     to: "Now",
-    
   },
   {
     id: 2,
@@ -13,7 +12,6 @@ export const experience = [
     place: "Raajdhani Engineering College,Bhubneswar",
     from: "2022",
     to: "2026",
-    
   },
   {
     id: 3,
@@ -21,7 +19,6 @@ export const experience = [
     place: "RIHS,Bhograi",
     from: "2020",
     to: "2022",
-   
   },
 
   {
@@ -30,6 +27,5 @@ export const experience = [
     place: "SM High School,Balharpur",
     from: "2018",
     to: "2020",
-   
   },
 ];

@@ -21,15 +21,12 @@ function AnimatedTextLines({ text, className = "" }) {
           trigger: containerRef.current,
           start: "top 85%",
         },
-      }
+      },
     );
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className={`flex flex-col gap-2 ${className}`}
-    >
+    <div ref={containerRef} className={`flex flex-col gap-2 ${className}`}>
       {lines.map((line, index) => (
         <p
           key={index}
