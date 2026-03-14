@@ -17,28 +17,65 @@ function Experience() {
       const role = el.querySelector(".exp-role");
       const date = el.querySelector(".exp-date");
 
-      gsap.set([company, role, date], { opacity: 0, y: 18 });
-      gsap.set(el, { opacity: 0, y: 26 });
+      gsap.set([company, role, date], {
+        opacity: 0,
+        y: 18,
+      });
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            once: true,
+      gsap.set(el, {
+        opacity: 0,
+        y: 26,
+        willChange: "transform, opacity",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      tl.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: "power2.out",
+      })
+        .to(
+          company,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.35,
           },
-        })
-        .to(el, { opacity: 1, y: 0, duration: 0.45 })
-        .to(company, { opacity: 1, y: 0, duration: 0.35 }, "-=0.3")
-        .to(role, { opacity: 1, y: 0, duration: 0.3 }, "-=0.25")
-        .to(date, { opacity: 1, y: 0, duration: 0.3 }, "-=0.3");
+          "-=0.3"
+        )
+        .to(
+          role,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.35,
+          },
+          "-=0.25"
+        )
+        .to(
+          date,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.35,
+          },
+          "-=0.3"
+        );
     });
 
     return () => ScrollTrigger.getAll().forEach((st) => st.kill());
   }, []);
 
   return (
-    <section id="experience" className="flex flex-col min-h-screen">
+    <section id="experience" className="flex flex-col">
       {/* HEADER */}
       <AnimatedHeaderSection
         title="EXPERIENCE"
@@ -58,9 +95,10 @@ function Experience() {
             className="px-6 sm:px-10 py-4 border-b border-black/30"
           >
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-6">
+
               {/* LEFT */}
               <div className="max-w-xl">
-                <h2 className="exp-company font  text-lg sm:text-xl md:text-2xl font-semibold text-black leading-tight">
+                <h2 className="exp-company text-lg sm:text-xl md:text-2xl font-semibold text-black leading-tight">
                   {item.place}
                 </h2>
 
@@ -73,6 +111,7 @@ function Experience() {
               <span className="exp-date text-xs sm:text-sm md:text-base font-medium text-black whitespace-nowrap">
                 {item.from} — {item.to}
               </span>
+
             </div>
           </div>
         ))}

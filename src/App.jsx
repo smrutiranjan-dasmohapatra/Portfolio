@@ -1,14 +1,13 @@
 import ReactLenis from "lenis/react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/hero";
 import Expertise from "./components/Expertise";
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Works from "./components/Works";
-
-import { StrictMode } from "react";
 import Experience from "./components/Experience";
-import Contact from "./components/Contact";
+import Contact from "./components/contact";
 
 function App() {
   return (
@@ -18,12 +17,10 @@ function App() {
         <Hero />
         <Expertise />
         <Skills />
-
         <About />
         <Experience />
         <Works />
         <Contact />
-        
       </div>
     </ReactLenis>
   );

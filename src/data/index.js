@@ -12,13 +12,13 @@ export const social = [
     id: "linkedin",
     label: "LinkedIn",
     icon: FaLinkedin,
-    link: "https://www.linkedin.com/in/smrutiranjan-dasmohapatra-b64837368",
+    link: "https://www.linkedin.com/in/smrutiranjan-dasmohapatra-b64837368/",
   },
   {
     id: "instagram",
     label: "Instagram",
     icon: FaInstagram,
-    link: "https://www.instagram.com/?hl=en",
+    link: "https://www.instagram.com/smrutiranjan.dmp/",
   },
   {
     id: "email",

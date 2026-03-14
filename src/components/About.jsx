@@ -53,7 +53,7 @@ My work mainly involves building responsive UIs, integrating APIs, improving per
   return (
     <section
       id="about"
-      className="min-h-screen bg-black rounded-b-sm overflow-x-hidden"
+      className=" dark-section  min-h-screen bg-black rounded-b-sm overflow-x-hidden"
     >
       {/* HEADER */}
       <AnimatedHeaderSection

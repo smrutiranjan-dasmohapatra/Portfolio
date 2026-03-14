@@ -1,7 +1,10 @@
 import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
 import { social } from "../data";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scroller } from "react-scroll";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Navbar() {
   const navRef = useRef(null);
@@ -15,6 +18,26 @@ function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
+  const [isWhite, setIsWhite] = useState(false);
+
+
+  useEffect(() => {
+  const sections = document.querySelectorAll(".dark-section");
+
+  sections.forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 80px",
+      end: "bottom 80px",
+
+      onEnter: () => setIsWhite(true),
+      onEnterBack: () => setIsWhite(true),
+
+      onLeave: () => setIsWhite(false),
+      onLeaveBack: () => setIsWhite(false),
+    });
+  });
+}, []);
 
   /* ================= GSAP SETUP (NO FLASH) ================= */
   useLayoutEffect(() => {
@@ -127,7 +150,7 @@ function Navbar() {
       {/* ===== MENU PANEL ===== */}
       <nav
         ref={navRef}
-        className=" fixed inset-0 z-[1500] flex flex-col justify-start
+        className="  fixed inset-0 z-[1500] flex flex-col justify-start
     w-full min-h-screen px-6 py-8 uppercase bg-black text-green-200 gap-30
     md:flex-col md:justify-between md:w-1/2 md:left-1/2 md:px-10 md:py-10 md:gap-6
     overflow-y-auto md:overflow-y-hidden"
@@ -200,21 +223,26 @@ function Navbar() {
         tabIndex={0}
         onClick={toggleMenu}
         onKeyDown={(e) => e.key === "Enter" && toggleMenu()}
-        className="fixed z-[3000] top-4 right-10 flex flex-col items-center justify-center gap-1 w-10 h-10 md:w-14 md:h-14 bg-black rounded-full cursor-pointer"
+        className="fixed z-[3000] top-4 right-10 flex flex-col items-center justify-center gap-1 w-10 h-10 md:w-14 md:h-14  cursor-pointer"
         style={{
           opacity: showMenu ? 1 : 0,
           pointerEvents: showMenu ? "auto" : "none",
           transition: "opacity 0.3s ease",
         }}
       >
-        <span
-          ref={topLineRef}
-          className="block w-7 h-0.5 bg-white rounded-full"
-        />
-        <span
-          ref={bottomLineRef}
-          className="block w-7 h-0.5 bg-white rounded-full"
-        />
+<span
+  ref={topLineRef}
+  className={`block w-7 h-0.5 rounded-full transition-colors duration-300 ${
+    isOpen ? "bg-green-200" : isWhite ? "bg-white" : "bg-black"
+  }`}
+/>
+
+<span
+  ref={bottomLineRef}
+  className={`block w-7 h-0.5 rounded-full transition-colors duration-300 ${
+    isOpen ? "bg-green-200" : isWhite ? "bg-white" : "bg-black"
+  }`}
+/>
       </div>
     </>
   );

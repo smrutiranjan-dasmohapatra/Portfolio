@@ -11,7 +11,7 @@ function AnimatedHeaderSection({
   heroLine, // 👈 NEW (LCP-safe text)
   text,
   textColor = "text-black",
-  titleSize = "text-2xl sm:text-3xl md:text-4xl xl:text-[4.5rem]",
+  titleSize = "text-3xl sm:text-4xl md:text-4xl xl:text-[4.5rem]",
   minHeight = "min-h-[65vh]",
   topSpacing = "pt-32",
 }) {
@@ -79,7 +79,7 @@ function AnimatedHeaderSection({
     <section ref={sectionRef} className="relative overflow-hidden">
       {/* TOP */}
       <div className={`relative ${minHeight} ${topSpacing}`}>
-        <div className={`px-10 sm:px-16 ${textColor}`}>
+        <div className={`px-5 sm:px-8 ${textColor}`}>
           {subTitle && (
             <p
               ref={subtitleRef}

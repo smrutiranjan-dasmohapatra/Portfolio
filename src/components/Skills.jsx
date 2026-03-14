@@ -76,7 +76,7 @@ function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="bg-black">
+    <section  id="skills" className="dark-section bg-black rounded-t-[2px]">
       {/* HEADER */}
       <AnimatedHeaderSection
         title="Skills & Tools"
@@ -88,12 +88,12 @@ function Skills() {
       />
 
       {/* SKILLS */}
-      <div className="flex flex-col gap-16 px-8 sm:px-12 pt-6 pb-20">
+      <div className="flex flex-col gap-16 px-8 sm:px-12 pt-0 sm:pt-30 pb-10">
         {skillsData.map((skill, index) => (
           <div
             key={index}
             ref={(el) => (skillsRef.current[index] = el)}
-            className="border-t border-green-200/20 pt-10"
+            className="border-b border-green-200/20 pb-5"
           >
             <div className="max-w-4xl flex flex-col gap-6">
               {/* TITLE */}

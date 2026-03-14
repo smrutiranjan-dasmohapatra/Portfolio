@@ -43,10 +43,10 @@ Skilled in UI/UX design and Figma, with real-world internship experience.`;
       {/* LEFT BAR */}
       <div
         ref={barRef}
-        className="absolute left-0 top-0 h-full w-[36px] sm:w-[56px] lg:w-[80px]
+        className="absolute left-0 top-0 h-full w-[46px] sm:w-[56px] lg:w-[80px]
                    bg-black z-20 flex items-center justify-center overflow-hidden"
       >
-        <div className="flex items-center rotate-90 whitespace-nowrap gap-12 font-medium text-xs tracking-[0.2em] text-green-200">
+        <div className="flex items-center rotate-90 whitespace-nowrap gap-32 sm:gap-12 font-medium text-xs tracking-[0.2em] text-green-200">
           {barItems.map((item) => (
             <span key={item.id} className="flex items-center gap-1">
               <span className="opacity-60">{item.id}</span>

@@ -56,7 +56,7 @@ and scalable web & mobile solutions using modern technologies.`;
   };
 
   return (
-    <section id="works" className="flex flex-col min-h-screen mb-30">
+    <section id="works" className="flex flex-col min-h-screen ">
       {/* ===== HEADER ===== */}
       <AnimatedHeaderSection
         title="WORKS"
