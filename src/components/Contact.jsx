@@ -48,15 +48,11 @@ const Contact = () => {
 
     const encodedMsg = encodeURIComponent(message);
 
-    window.open(
-      `https://wa.me/918249172250?text=${encodedMsg}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/918249172250?text=${encodedMsg}`, "_blank");
   };
 
   return (
     <section
-  
       id="contact"
       ref={sectionRef}
       className="dark-section bg-black mt-20 overflow-x-hidden"
@@ -83,23 +79,20 @@ const Contact = () => {
             text-green-200/80
           "
         >
-          Frontend-focused full-stack developer helping turn ideas into
-          modern web and mobile applications.
+          Frontend-focused full-stack developer helping turn ideas into modern
+          web and mobile applications.
         </h2>
       </div>
 
       {/* GRID */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 mt-24 grid grid-cols-1 md:grid-cols-4 gap-16 text-green-200">
-
         {/* BRAND */}
         <div ref={(el) => (colRefs.current[0] = el)}>
-          <h3 className="text-3xl font-normal tracking-wide mb-6">
-            SMRUTI
-          </h3>
+          <h3 className="text-3xl font-normal tracking-wide mb-6">SMRUTI</h3>
 
           <p className="text-green-100/90 leading-relaxed">
-            Frontend-focused full-stack developer building clean,
-            modern, scalable web and mobile experiences.
+            Frontend-focused full-stack developer building clean, modern,
+            scalable web and mobile experiences.
           </p>
         </div>
 
@@ -162,21 +155,13 @@ const Contact = () => {
 
           <ul className="space-y-3">
             <li>
-              <a
-                href="/resume.pdf"
-                download
-                className="hover:text-white"
-              >
+              <a href="/resume.pdf" download className="hover:text-white">
                 Resume (PDF)
               </a>
             </li>
 
             <li>
-              <a
-                href="/portfolio.pdf"
-                download
-                className="hover:text-white"
-              >
+              <a href="/portfolio.pdf" download className="hover:text-white">
                 Portfolio (PDF)
               </a>
             </li>
@@ -190,8 +175,8 @@ const Contact = () => {
           </p>
 
           <p className="text-green-100/90 mb-4">
-            Have feedback, a question, or an opportunity?
-            Send a quick message — I’ll reply personally.
+            Have feedback, a question, or an opportunity? Send a quick message —
+            I’ll reply personally.
           </p>
 
           <textarea
@@ -210,15 +195,14 @@ const Contact = () => {
           <button
             onClick={handleWhatsAppSend}
             className="
-              w-full bg-green-300 text-black
+              w-full bg-green-400 text-black
               px-6 py-3 text-sm font-medium
-              hover:bg-green-400 transition
+              hover:bg-green-500 transition
             "
           >
             Send to WhatsApp
           </button>
         </div>
-
       </div>
 
       {/* FOOTER */}
