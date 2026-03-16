@@ -11,7 +11,7 @@ function AnimatedHeaderSection({
   heroLine, // 👈 NEW (LCP-safe text)
   text,
   textColor = "text-black",
-  titleSize = "text-3xl sm:text-4xl md:text-4xl xl:text-[4.5rem]",
+  titleSize = "text-3xl sm:text-5xl md:text-5xl xl:text-[4.5rem]",
   minHeight = "min-h-[65vh]",
   topSpacing = "pt-32",
 }) {
