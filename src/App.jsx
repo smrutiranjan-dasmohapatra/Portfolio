@@ -7,8 +7,7 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Works from "./components/Works";
 import Experience from "./components/Experience";
-import Contact from "./components/contact";
-
+import Contact from "./components/Contact";
 function App() {
   return (
     <ReactLenis root>
