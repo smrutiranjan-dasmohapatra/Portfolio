@@ -13,7 +13,6 @@ function Hero() {
   const barRef = useRef(null);
   const lastScroll = useRef(0);
 
-
   const text = `Building modern web & mobile apps with React, React Native, Flutter, Next.js, Tailwind, GSAP & Django.
 Skilled in UI/UX design and Figma, with real-world internship experience.`;
 
@@ -43,7 +42,7 @@ Skilled in UI/UX design and Figma, with real-world internship experience.`;
       {/* LEFT BAR */}
       <div
         ref={barRef}
-        className="absolute left-0 top-0 h-full w-[46px] sm:w-[56px] lg:w-[80px]
+        className="absolute left-0 top-0 h-full w-[40px] sm:w-[56px] lg:w-[80px]
                    bg-black z-20 flex items-center justify-center overflow-hidden"
       >
         <div className="flex items-center rotate-90 whitespace-nowrap gap-32 sm:gap-12 font-medium text-xs tracking-[0.2em] text-green-200">
@@ -59,7 +58,6 @@ Skilled in UI/UX design and Figma, with real-world internship experience.`;
       <AnimatedHeaderSection
         subTitle="Hi, I'm Smruti — Frontend-focused full-stack developer."
         title="SMRUTI"
-    
         text={text}
         textColor="text-black"
         topSpacing="pt-16 sm:pt-28 lg:pt-48"

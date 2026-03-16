@@ -195,9 +195,9 @@ const Contact = () => {
           <button
             onClick={handleWhatsAppSend}
             className="
-              w-full bg-green-400 text-black
+              w-full bg-green-300 text-black
               px-6 py-3 text-sm font-medium
-              hover:bg-green-500 transition
+              hover:bg-green-400 transition
             "
           >
             Send to WhatsApp
