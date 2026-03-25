@@ -36,7 +36,7 @@ const Contact = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 80%",
           once: true,
         },
       });
@@ -216,15 +216,7 @@ const Contact = () => {
           gap-4
         "
       >
-        <p>© 2026 Smrutiranjan Damohapatra</p>
-
-        <p className="flex items-center gap-2 text-green-100/80 text-sm">
-          <Icon
-            icon="mdi:map-marker-outline"
-            className="text-green-200 text-lg"
-          />
-          Based in Odisha , India
-        </p>
+       
       </div>
     </section>
   );

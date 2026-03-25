@@ -1,5 +1,5 @@
-import ReactLenis from "lenis/react";
-import useLenisScroll from "./hooks/useLenisScroll";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/hero";
@@ -11,21 +11,34 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
 function App() {
-  useLenisScroll(); // 🔥 IMPORTANT
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.08, // smoothness
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
-    <ReactLenis root>
-      <div className="relative w-screen min-h-screen bg-green-200 overflow-x-hidden">
-        <Navbar />
-        <Hero />
-        <Expertise />
-        <Skills />
-        <About />
-        <Experience />
-        <Works />
-        <Contact />
-      </div>
-    </ReactLenis>
+    <div className="relative w-screen min-h-screen bg-green-200 overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <Expertise />
+      <Skills />
+      <About />
+      <Experience />
+      <Works />
+      <Contact />
+    </div>
   );
 }
 
