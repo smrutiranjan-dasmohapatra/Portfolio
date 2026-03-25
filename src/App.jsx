@@ -1,4 +1,5 @@
 import ReactLenis from "lenis/react";
+import useLenisScroll from "./hooks/useLenisScroll";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/hero";
@@ -8,7 +9,10 @@ import About from "./components/About";
 import Works from "./components/Works";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+
 function App() {
+  useLenisScroll(); // 🔥 IMPORTANT
+
   return (
     <ReactLenis root>
       <div className="relative w-screen min-h-screen bg-green-200 overflow-x-hidden">
